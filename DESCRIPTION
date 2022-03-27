@@ -11,7 +11,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports:
     sf (>= 1.0-7),
-    rmapshaper (>= 0.4.5)
+    rmapshaper (>= 0.4.5),
+    assertthat (>= 0.2.1)
 Suggests:
     ggplot2,
     dplyr,
