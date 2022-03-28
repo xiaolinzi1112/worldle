@@ -4,3 +4,4 @@
 ^README.*$
 lab2-scripts
 docs
+^\.github$
