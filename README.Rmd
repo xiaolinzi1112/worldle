@@ -16,7 +16,6 @@ knitr::opts_chunk$set(
 # worldle
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/heike/worldle/workflows/R-CMD-check/badge.svg)](https://github.com/heike/worldle/actions)
 <!-- badges: end -->
 
 The goal of worldle is to be able to play a game of guessing a country based on its shape.
