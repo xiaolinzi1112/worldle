@@ -12,7 +12,7 @@
 #' url <- 'https://biogeo.ucdavis.edu/data/gadm3.6/shp/gadm36_IRN_shp.zip'
 #' # url for Bahamas
 #' url <- "https://geodata.ucdavis.edu/gadm/gadm4.0/shp/gadm40_BHS_shp.zip"
-#' country <- get_shapes(url)
+#' country <- worldle::get_shapes(url)
 #' library(ggplot2)
 #' library(dplyr)
 #' country %>% thin(tolerance=0.001) %>%  ggplot() + geom_sf() + theme_void()
@@ -20,7 +20,7 @@ get_shapes <- function(url, level = 0) {
   assertthat::assert_that(length(url)==1)
   assertthat::assert_that(is.character(url))
   assertthat::assert_that(valid_url(url))
-  assertthat::assert_that(level %in% c(0,1,2,3))
+  assertthat::assert_that(level %in% c(0,1,2,3,4))
 
   url_splitted <- strsplit(url, split = "/")[[1]]
   file_name <- url_splitted[length(url_splitted)]
@@ -31,7 +31,8 @@ get_shapes <- function(url, level = 0) {
   # Try to download
   download.file(url,
     destfile = destfile,
-    mode = "wb"
+    mode = "wb",
+    quiet=TRUE
   )
   # unzip
   new_folder <- gsub(".zip$", "", destfile)
